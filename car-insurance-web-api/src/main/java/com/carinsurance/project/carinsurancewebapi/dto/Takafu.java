@@ -2,6 +2,8 @@ package com.carinsurance.project.carinsurancewebapi.dto;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Takafu implements Serializable {
 
 	/**
@@ -9,7 +11,10 @@ public class Takafu implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@JsonProperty("Company")
 	private String company;
+	
+	@JsonProperty("Islamic")
 	private String isIslamic;
 	
 	

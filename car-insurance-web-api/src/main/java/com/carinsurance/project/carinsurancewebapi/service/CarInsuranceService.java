@@ -2,6 +2,7 @@ package com.carinsurance.project.carinsurancewebapi.service;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ public class CarInsuranceService {
 	@Autowired
 	private CarInsuranceRepository carInsuranceRepository;
 	
-	public List<Product> getProductDetails() throws IOException {
+	public Set<Product> getProductDetails() throws IOException {
 		return carInsuranceRepository.getProductDetails();
 	}
 	

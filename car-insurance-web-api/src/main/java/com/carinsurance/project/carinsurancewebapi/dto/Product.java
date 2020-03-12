@@ -32,6 +32,8 @@ public class Product implements Serializable{
 	@JsonProperty("TAXPercentage")
 	private int taxPercentage;
 	
+	@JsonProperty("takaful")
+	private String takaful;
 	
 	public String getCompany() {
 		return company;
@@ -74,5 +76,65 @@ public class Product implements Serializable{
 	}
 	public void setTaxPercentage(int taxPercentage) {
 		this.taxPercentage = taxPercentage;
+	}
+	public String getTakaful() {
+		return takaful;
+	}
+	public void setTakaful(String takaful) {
+		this.takaful = takaful;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (amount ^ (amount >>> 32));
+		result = prime * result + ((brandsCovered == null) ? 0 : brandsCovered.hashCode());
+		result = prime * result + ((company == null) ? 0 : company.hashCode());
+		result = prime * result + modelFrom;
+		result = prime * result + modelTo;
+		result = prime * result + ((product == null) ? 0 : product.hashCode());
+		result = prime * result + ((takaful == null) ? 0 : takaful.hashCode());
+		result = prime * result + taxPercentage;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		if (amount != other.amount)
+			return false;
+		if (brandsCovered == null) {
+			if (other.brandsCovered != null)
+				return false;
+		} else if (!brandsCovered.equals(other.brandsCovered))
+			return false;
+		if (company == null) {
+			if (other.company != null)
+				return false;
+		} else if (!company.equals(other.company))
+			return false;
+		if (modelFrom != other.modelFrom)
+			return false;
+		if (modelTo != other.modelTo)
+			return false;
+		if (product == null) {
+			if (other.product != null)
+				return false;
+		} else if (!product.equals(other.product))
+			return false;
+		if (takaful == null) {
+			if (other.takaful != null)
+				return false;
+		} else if (!takaful.equals(other.takaful))
+			return false;
+		if (taxPercentage != other.taxPercentage)
+			return false;
+		return true;
 	}
 }
