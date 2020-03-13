@@ -27,13 +27,6 @@ public class CarInsuranceController {
 	@Autowired
 	private CarInsuranceService carInsuranceService;
 	
-	@RequestMapping(value = "/result", method = RequestMethod.GET)
-	public ModelAndView getProductDetails() throws IOException {
-		
-		ModelAndView view = new ModelAndView();
-		view.addObject("insuranceData", carInsuranceService.getProductDetails());
-		return view;
-	}
 	
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
     public ModelAndView welcome() {
